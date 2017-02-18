@@ -47,6 +47,7 @@ module.exports = {
 
   rules: {
     // http://eslint.org/docs/rules/
+    'object-curly-spacing': ['warn', 'always'],
     'array-callback-return': 'warn',
     'default-case': ['warn', { commentPattern: '^no default$' }],
     'dot-location': ['warn', 'property'],
