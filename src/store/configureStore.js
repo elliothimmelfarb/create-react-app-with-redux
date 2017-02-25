@@ -3,7 +3,7 @@
 
 import { createStore, applyMiddleware, compose } from 'redux';
 import reduxThunk from 'redux-thunk';
-import rootReducer from '../reducers';
+import rootReducer from '../Reducers';
 
 export default (initialState) => {
   const middlewareEnhancer = compose(

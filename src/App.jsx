@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import PeopleContainer from './containers/PeopleContainer';
+import PeopleContainer from './Containers/PeopleContainer';
 
 
 class App extends Component { // eslint-disable-line react/prefer-stateless-function
