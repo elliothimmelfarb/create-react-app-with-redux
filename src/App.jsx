@@ -3,7 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import PeopleContainer from './components/PeopleContainer';
 
-class App extends Component {
+
+class App extends Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <div className="App">

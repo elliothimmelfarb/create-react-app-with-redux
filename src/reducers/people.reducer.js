@@ -1,4 +1,4 @@
-import * as types from '../actions/action-types';
+import * as types from '../actions/people.actions';
 
 export default (state = [], action) => {
   switch (action.type) {

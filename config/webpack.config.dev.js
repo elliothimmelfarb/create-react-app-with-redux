@@ -21,7 +21,7 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['', '.js', '.json'],
+    extensions: ['', '.jsx', '.js', '.json'],
     alias: {
       // This `alias` section can be safely removed after ejection.
       // We do this because `babel-runtime` may be inside `react-scripts`,
@@ -41,14 +41,14 @@ module.exports = {
   module: {
     preLoaders: [
       {
-        test: /\.js$/,
+        test: /\.js\w*$/,
         loader: 'eslint',
         include: paths.appSrc,
       }
     ],
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.js\w*$/,
         include: paths.appSrc,
         loader: 'babel',
         query: require('./babel.dev')
@@ -83,8 +83,8 @@ module.exports = {
     ]
   },
   eslint: {
-    configFile: path.join(__dirname, 'eslint.js'),
-    useEslintrc: false
+    // configFile: path.join(__dirname, 'eslint.js'),
+    useEslintrc: true
   },
   postcss: function() {
     return [autoprefixer];

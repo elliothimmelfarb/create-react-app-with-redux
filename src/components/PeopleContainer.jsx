@@ -1,7 +1,7 @@
-import React, {PropTypes, Component} from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import * as peopleActions from '../actions/people-actions';
+import React, { PropTypes, Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as peopleActions from '../actions/people.actions';
 import PeopleList from './PeopleList';
 import PersonInput from './PersonInput';
 
@@ -10,12 +10,12 @@ class PeopleContainer extends Component {
     super(props);
 
     this.state = {
-      people: []
+      people: [],
     };
   }
 
   render() {
-    const {people} = this.props;
+    const { people } = this.props;
 
     return (
       <div>
@@ -27,20 +27,20 @@ class PeopleContainer extends Component {
 }
 
 PeopleContainer.propTypes = {
-  people: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired
+  people: PropTypes.arrayOf(PropTypes.object).isRequired,
+  actions: PropTypes.objectOf(PropTypes.func).isRequired,
 };
 
-function mapStateToProps(state, props) {
+function mapStateToProps(state /* , props */) {
   return {
-    people: state.people
+    people: state.people,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(peopleActions, dispatch)
-  }
+    actions: bindActionCreators(peopleActions, dispatch),
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PeopleContainer);
