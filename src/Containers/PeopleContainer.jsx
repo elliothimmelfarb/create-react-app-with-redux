@@ -2,8 +2,8 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as peopleActions from '../actions/people.actions';
-import PeopleList from './PeopleList';
-import PersonInput from './PersonInput';
+import PeopleList from '../components/PeopleList';
+import PersonInput from '../components/PersonInput';
 
 class PeopleContainer extends Component {
   constructor(props) {
