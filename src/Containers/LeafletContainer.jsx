@@ -1,42 +1,22 @@
 import React, { PropTypes } from 'react';
-import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 import { connect } from 'react-redux';
 import '../App.css';
+import LeafletMap from '../Components/LeafletMap';
 
 function LeafletContainer(props) {
-  const attribution = `
-    &copy;<a href="http://osm.org/copyright">OpenStreetMap</a>contributors
-  `;
-
-  const Points = props.points.map(point => (
-    <Marker position={point}>
-      <Popup>
-        <span>A pretty CSS3 popup.<br />Easily customizable.</span>
-      </Popup>
-    </Marker>
-  ));
-
-  console.log('points', Points)
-
   return (
-    <div className="leaflet-container">
-      <Map center={props.points[0]} zoom={13}>
-        <TileLayer
-          url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
-          attribution={attribution}
-        />
-        { Points }
-      </Map>
+    <div>
+      <LeafletMap points={props.points} />
     </div>
   );
 }
 
 LeafletContainer.propTypes = {
-  points: PropTypes.arrayOf(PropTypes.array).isRequired,
+  points: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 const mapStateToProps = state => ({
-  points: state.point.coords,
+  points: state.point.points,
 });
 
 export default connect(mapStateToProps)(LeafletContainer);

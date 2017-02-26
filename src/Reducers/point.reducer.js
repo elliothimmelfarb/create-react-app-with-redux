@@ -1,8 +1,11 @@
 // import * as types from '../Actions/point.actions';
 
 const initialState = {
-  coords: [
-    [51.505, -0.09],
+  points: [
+    {
+      id: 1,
+      coords: [40.014984, -105.2705],
+    },
   ],
 };
 
