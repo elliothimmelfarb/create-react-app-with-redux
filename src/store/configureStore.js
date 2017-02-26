@@ -4,6 +4,11 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import reduxThunk from 'redux-thunk';
 import rootReducer from '../Reducers';
+import DB from '../DB';
+
+// initialize pouchdb database and export custom object with
+// local db and remote url. Check index.js in /DB/ directory
+export const db = DB('start');
 
 export default (initialState) => {
   const middlewareEnhancer = compose(
