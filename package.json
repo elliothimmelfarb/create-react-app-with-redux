@@ -45,8 +45,10 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "leaflet": "^1.0.3",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
+    "react-leaflet": "^1.1.0",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
     "redux-thunk": "^2.2.0"
